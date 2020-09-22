@@ -1,0 +1,166 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jan 21, 2019, 9:10:16 PM
+    Author     : jeet
+*/
+
+
+html,
+
+body {
+     min-height: 100%;
+     font-family: ' Helvetica Neue';
+     background-color: #354152;
+     color:#ffff;
+    }
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:400px;
+	position:relative;
+  background:url(h-da.jpg) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+        background:#354152;
+
+	background:rgba(53,65,82,.9);
+}
+
+.fieldset{
+    width: 575px;
+    height: 450px;
+    border-color:#3b8ec2;
+    border:none;
+
+}
+
+.centered{
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.styled-select {
+   height: 29px;
+   overflow: hidden;
+   width: 190px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+
+/* -------------------- Rounded Corners */
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+/* -------------------- Colors: Background */
+.slate   { background-color: #ddd; }
+.green   { background-color: #779126; }
+.blue    { background-color: #3b8ec2; }
+.yellow  { background-color: #eec111; }
+.black   { background-color: #000; }
+
+/* -------------------- Colors: Text */
+.slate select   { color: #000; }
+.green select   { color: #fff; }
+.blue select    { color: #fff; }
+.yellow select  { color: #000; }
+.black select   { color: #fff; }
+
+
+input[type=button],[type=submit], input[type=reset] {
+
+  background-image: linear-gradient(45deg, #304152 0%, #358052 100%);
+  border: none;
+  color:#fff;
+  padding: 16px 32px;
+  text-decoration: none;
+  text-align: center;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: ' Helvetica Neue';
+  position: relative;
+  left:50%;
+  transform: translate(-50%);
+
+}
+.coolButton {
+  background-image: linear-gradient(45deg, #304152 0%, #358052 100%);
+  border: none;
+  color:#fff;
+  padding: 16px 32px;
+  text-decoration: none;
+  text-align: center;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: ' Helvetica Neue';
+  position: relative;
+  left:50%;
+  transform: translate(-50%);
+}
+
+.logoMachine{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50%;
+  margin-bottom: -10%;
+  width: 100%;
+}
+.logoApplication{
+   display: block;
+   margin-left: -10%;
+   margin-right: auto;
+   margin-top: -50%;
+   margin-bottom: -10%;
+   width: 100%;
+ }
+
+.normalText{
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
