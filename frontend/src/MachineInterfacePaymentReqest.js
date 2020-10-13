@@ -17,9 +17,9 @@ class MachineInterfacePaymentRequest extends Component {
 
   sendPaymentRequest(event){
     //Hier wurde die Adresse für unsere Umgebung geändert
-    AppMachineContract.requestToken({ from:'0x50DDBE00658a5CeF41f35db1bc56ac3EACAC502E',gas:3000000});
+    AppMachineContract.requestToken({ from:AppMachineContract.getMachineAddress(),gas:3000000});
     //Sende Token an den Kunden, damit die Maschine besetzt ist
-    TokenContract.transfer(AppMachineContract.getAppAddress(), 1, {from:'0x50DDBE00658a5CeF41f35db1bc56ac3EACAC502E'});
+    TokenContract.transfer(AppMachineContract.getAppAddress(), 1, {from:AppMachineContract.getMachineAddress()});
   }
   render() {
     return (

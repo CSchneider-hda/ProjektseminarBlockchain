@@ -23,7 +23,7 @@ class ApplicationInterfaceRequestSent extends Component {
                 Start Time:<Moment unix>{AppMachineContract.getStartTime().toNumber()}</Moment><br />
                 Duration:{AppMachineContract.getDuration().toNumber()} days<br />
                 Type:{AppMachineContract.getType().toNumber()==1?'Raw':'Processed'}<br />
-                Quality:{AppMachineContract.getQuality().toNumber()==1?'high':'Low'}<br />
+                Quality:{AppMachineContract.getQuality().toNumber()==1?'Low':'High'}<br />
                 Status: <b>Not Acknowledged</b><br /><br />
               </div>
             </div>

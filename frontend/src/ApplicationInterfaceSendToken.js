@@ -10,14 +10,14 @@ import Web3 from 'web3';
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 class ApplicationInterfaceSendToken extends Component {
   
-  applicationBalance = web3.eth.getBalance("0xb8B76e5A4AebBe98D09b5dEb92A9505A6df8f1fb");
+  applicationBalance = web3.eth.getBalance(AppMachineContract.getAppAddress());
   requiredToken = AppMachineContract.getRequiredToken();
 
   sendToken(event){
     //Hier wurde die Adresse für unsere Umgebung geändert
-    AppMachineContract.sendToken({from:"0xb8B76e5A4AebBe98D09b5dEb92A9505A6df8f1fb",gas:3000000,value:AppMachineContract.getRequiredToken()});
+    AppMachineContract.sendToken({from:AppMachineContract.getAppAddress(),gas:3000000,value:AppMachineContract.getRequiredToken()});
     //Gibt den Token an den Contract AppMachineContract und führt die getPublicData function dabei aus ("0xf31604c7" ist der bytecode für den Funktion Call)
-    //TokenContract.transferAndCall(AppMachineContract.getContractAddress(), 1, "0xf31604c7", {from:"0xb8B76e5A4AebBe98D09b5dEb92A9505A6df8f1fb"});
+    TokenContract.transferAndCall(AppMachineContract.getContractAddress(), 1, "0xf31604c7", {from:AppMachineContract.getAppAddress()});
 
   }
 

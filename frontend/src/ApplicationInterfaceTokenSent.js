@@ -21,15 +21,15 @@ class ApplicationInterfaceTokenSent extends Component {
     this.m_type = AppMachineContract.getType().toNumber();
     this.m_quality = AppMachineContract.getQuality().toNumber();
     this.m_appAddress =AppMachineContract.getAppAddress();
-    //this.m_data = AppMachineContract.getPublicData();
+    this.m_data = AppMachineContract.getPublicData();
     const element = document.createElement("a");
     const file = new Blob([this.m_appAddress+'\t'+
                           this.m_startTime+'\t'+
                           this.m_duration+'\t'+
                           this.m_type+'\t'+
-                          this.m_quality+'\t'
+                          this.m_quality+'\t'+
                           //Data hier hinzugefügt, um sie im txt-file zu sehen
-                          //this.m_data+'\t'
+                          this.m_data+'\t'
                           ], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
     element.download = "myFile.txt";
@@ -48,7 +48,7 @@ class ApplicationInterfaceTokenSent extends Component {
               Start Time:<Moment unix>{AppMachineContract.getStartTime().toNumber()}</Moment><br />
               Duration:{AppMachineContract.getDuration().toNumber()} days<br />
               Type:{AppMachineContract.getType().toNumber()==1?'Raw':'Processed'}<br />
-              Quality:{AppMachineContract.getQuality().toNumber()==1?'high':'Low'}<br />
+              Quality:{AppMachineContract.getQuality().toNumber()==1?'Low':'High'}<br />
               Payment Status:<b>{AppMachineContract.tokenTransferred.call()==true?'Paid':'Not Paid'}</b><br /><br />
               <button type="button" className =" coolButton semi-square"  onClick={this.downloadTxtFile}>Download txt</button>
               </div>

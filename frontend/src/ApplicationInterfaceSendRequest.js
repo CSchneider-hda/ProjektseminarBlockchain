@@ -77,7 +77,7 @@ class ApplicationInterfaceSendRequest extends Component {
     event.preventDefault();
     const duration=Number(this.state.m_duration);
     //Hier wurde die Adresse für unsere Umgebung geändert
-    AppMachineContract.sendRequest(Number(this.x),duration,Number(this.m_type),Number(this.m_quality), { from:"0xb8B76e5A4AebBe98D09b5dEb92A9505A6df8f1fb",gas:3000000});
+    AppMachineContract.sendRequest(Number(this.x),duration,Number(this.m_type),Number(this.m_quality), { from:AppMachineContract.getAppAddress(),gas:3000000});
     alert('Request Sent'+
     '\nStart Time: '+this.x+
     '\nDuration: '+this.state.m_duration+
