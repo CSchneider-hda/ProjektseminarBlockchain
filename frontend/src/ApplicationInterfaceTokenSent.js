@@ -21,15 +21,15 @@ class ApplicationInterfaceTokenSent extends Component {
     this.m_type = AppMachineContract.getType().toNumber();
     this.m_quality = AppMachineContract.getQuality().toNumber();
     this.m_appAddress =AppMachineContract.getAppAddress();
-    this.m_data = AppMachineContract.getPublicData();
+    //this.m_data = AppMachineContract.getPublicData();
     const element = document.createElement("a");
     const file = new Blob([this.m_appAddress+'\t'+
                           this.m_startTime+'\t'+
                           this.m_duration+'\t'+
                           this.m_type+'\t'+
-                          this.m_quality+'\t'+
+                          this.m_quality+'\t'
                           //Data hier hinzugefügt, um sie im txt-file zu sehen
-                          this.m_data+'\t'
+                          //this.m_data+'\t'
                           ], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
     element.download = "myFile.txt";

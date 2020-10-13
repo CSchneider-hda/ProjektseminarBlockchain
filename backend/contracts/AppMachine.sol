@@ -8,9 +8,7 @@ contract AppMachine {
 
 
     address private appAddress;
-
     address payable private machineAddress;
-
     address contractAddress;
 
     struct RequestApp {
@@ -27,9 +25,10 @@ contract AppMachine {
     bool public requestAcknowledged;
     bool public tokenTransferred;
 
+    //Eine Sensorinstanz
     Sensor sensor1;
 
-    //Event, welches beim Debuggen hilft
+    //Event, welches beim Debuggen hilft um einen Funktionsaufruf nachzuweisen
     event FunctionCalled(
         address indexed sender,
         string name
@@ -51,7 +50,7 @@ contract AppMachine {
         appAddress = msg.sender;
         contractAddress = address(this);
 
-        //Sensor erzeugen
+        //Sensorinstanz erzeugen
         sensor1 = new Sensor();
     }
 
@@ -110,7 +109,7 @@ contract AppMachine {
     Data handler
 */
 
-    //Hilfsfunktion zum Encoden eines Funktionsaufrufs. Wird für die ERC-827 Call-Funktionalität benötigt
+    //Hilfsfunktion zum Encoden eines Funktionsaufrufs. Der Funktionsaufruf/Call durch den ERC827-Token benötigt den Bytecode des Funktionsaufrufes. 
     bytes code;
     function encoder() public returns(bytes memory)
     {
@@ -118,10 +117,10 @@ contract AppMachine {
         return code;
     }
 
-    //Einsehbare Datan
+    //Einsehbare Daten
     uint256 public publicData;
     
-    //Prüft, ob schon bezahlt
+    //Prüft, ob schon bezahlt ist. Kann als Vorraussetzung eines Funktionsaufrufes verwendet werden
     modifier isPaid()
     {
         require(tokenTransferred == true);

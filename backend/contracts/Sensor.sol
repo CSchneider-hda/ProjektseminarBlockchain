@@ -8,7 +8,7 @@ contract Sensor {
 	uint256 sensorData;
 	address appAddress;
 
-	//Wird vom Contract AppMachine aufgerufen und speichert die Addresse dieses Contracts
+	//Wird vom Contract AppMachine aufgerufen und speichert die Addresse dieses Contracts. Sensordaten werden hier einfach gesetzt, da wir keinen realen Sensor haben.
 	constructor () public {
 		sensorData = 555;
 		appAddress = msg.sender;
@@ -20,6 +20,7 @@ contract Sensor {
 		_;
 	}
 
+	//getter
 	function getCurrentData() public view fromContract returns(uint256)
 	{
 		return sensorData;
